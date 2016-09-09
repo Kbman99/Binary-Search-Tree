@@ -1,0 +1,54 @@
+https://www.youtube.com/watch?v=9RHO6jU--GU
+
+Tree Traversal: process of visiting each node in the tree
+exactly once in some order.
+(1) Breadth-first: Vising each level one at a time before continuing on.
+	- Level: Defined as the depth of the node (number of edges),
+ 	root is at level 0 (L-0), one level down is level 1 (L-1)
+	and so on. Also known as level order traversal
+	Level-order traversal always uses the Left to Right direction of traversal.
+	
+	Algorithm - In order to perform Level-order traversal we must also keep the reference or
+	the address of all of a nodes children inside of a Queue (FIFO) in order to visit
+	them later. A node in the Queue can be called discovered node. If we have root node
+	who's address is say 400, we can store the address of that node in the Queue.
+	Initially we start with a single discover mode, we can take a node off of the front,
+	visit it, then Queue it's children. If it's children are at adrress 200 and 100, 
+	We will simply add the address' 200 and 100 to the Queue! This allows us to move from
+	a node and not lose reference to it's children and then because Queue is First In
+	First Out so a node which is discovered/inserted first will then be visited first.
+	
+	Time-Complexity - For all cases = O(n)
+	Space-Complexity - It's different for some cases such as if the tree is linear meaning 
+	each node only has a single left child node then the Space-Complexity = 0(1) - best
+	If the binary tree is full or 'perfect' then Space-Complexity = O(n) - Worst/Average
+
+	Video: https://www.youtube.com/watch?v=86g8jAQug04
+
+(2) Depth-first: Vising the right/left children of a node before contuing 
+on with the left/right children of the tree.
+	-Preorder Traversal(DLR): To first visit the <root><left><right> in that order.
+	-Inorder Traversal(LDR): To first visit the <left><root><right> in that order.
+	-Postorder Traversal(LRD): To first visit the <left><right><root> in that order
+	Easy to remember knowing that Preorder is <root> first, Inorder is <root> middle,
+	Postorder is <root> last. Most typically <left> is visited/searched before <right>
+	This pattern or DLR or LDR or LRD is continued even in the branches of the tree.
+	
+	If using DLR and at the last 3 nodes in a tree you can first take the data of 
+	the head node(D) which connects the other 2 nodes then go to the left node(L)
+	and finally back up to (D) and over to the right node(R).
+
+	Time-Complexity - For all cases O(n)
+	Space-Complexity - For all cases O(h) where 'h' denotes the height of a tree
+	Worst case - O(n)
+	Best/Average case - O(logn)
+
+	Video: https://www.youtube.com/watch?v=gm8DUJJhmY4
+
+Visit: Reading/Processing data in a node.
+
+Checking if a Binary Tree qualifies as a Binary Search Tree
+
+Binary Search Tree(BST) - a binary tree in which for each node, value of all the nodes in
+the left subtree is less than or equal to the main node and the value of all the nodes in
+a right subtree is greater
